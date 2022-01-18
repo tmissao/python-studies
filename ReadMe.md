@@ -10,4 +10,4 @@ It can be divided into the following sections:
 ---
 
 - [Python Course](https://www.udemy.com/course/complete-python-bootcamp)
-= [Resource Materials](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
+- [Resource Materials](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
