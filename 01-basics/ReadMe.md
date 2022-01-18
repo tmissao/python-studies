@@ -1,4 +1,4 @@
-# Python Basic
+# Python Basics
 
 ## Numbers
 ---
@@ -167,7 +167,120 @@ print(d.values()) # returns all values of the dictionary
 print(d.items()) # returns all key-value of the dictionary together
 ```
 
+## Tuples
+---
+Tuples are very similar to lists. However they have one key difference, they are `immutable`. Once an element is inside a tuple, it can not be reassigned
+```python
+t = (1, 2, 3)
+print(t)
+
+# indexing
+print(t[0])
+print(t[1:])
+
+# Tuple Methods
+t = ('a', 'a', 'b')
+print(t.count('a')) # count how many times an elements appers
+print(t.index('a')) # returns the index of the first an element appers
+
+# Cannot Perform Assignment
+t[0] = 'b' # Error Raised
+```
+
+## Sets
+---
+Sets are unordered collections of `unique` elements. Meaning there can only be one representative of the same object.
+```python
+myset = set()
+
+myset.add(1) # adds element to set
+myset.add(2)
+myset.add(2) # this element will not be added because '2' already is in the set. But no error will be raised
+
+print(myset)
+
+mylist = [1,5,1,1,1,1,1,1,2,2,2,2,3,4,4]
+uniquevalues = set(mylist) # casts a list to set, eliminating all duplicated values
+
+print(uniquevalues)
+```
+
+## Booleans
+---
+Booleans are operators that allow you to convey `True` or `False` statements. On python the value true/false are capitalized ( `True` / `False` )
+```python
+t = True
+f = False
+
+print(t)
+print(type(t))
+```
+
+## Files I/O
+---
+Python allows to work with SO I/O.
+
+### `Reading File | Old Way`
+```python
+filePath = '../artifacts/test.txt'
+myfile = open(filePath) # opens file
+
+content = myfile.read() # reads everything inside the file. Returning a single string
+print(content)
+content = myfile.read() # this will return an empty string, since right now the cursor is at the end of the file
+print(content)
+myfile.seek(0) # resets the cursor to the beggining of the file
+content = myfile.read()
+print(content)
+
+myfile.seek(0)
+print(myfile.readlines()) # returns an array with each element represents the line of the file
+
+myfile.close() # closes file
+```
+
+### `Reading File | New Way`
+```python
+filePath = '../artifacts/test.txt'
+
+# new way to handle file, using with it is not necessary to close the file
+with open(filePath) as my_new_file:
+  content2 = my_new_file.read()
+
+print(content2)
+```
+### `File Mode`
+By the default python opens the file as read, however it is possible to configure it using a custom mode
+- `mode="r"` is read only
+- `mode="w"` is write only (will overwrite files or create new one)
+- `mode="a"` is append only (will add on to files)
+- `mode="r+"` is reading and writing 
+- `mode="w+"` is writing and reading (Overwrites existing files or creates a new one)
+```python
+filePath = '../artifacts/test.txt'
+# opening as read
+with open(filePath, mode='r') as my_new_file: 
+  content = my_new_file.read()
+print(content)
+
+# opening as append
+with open(filePath, mode = 'a') as myfile:
+  myfile.write('\nthis is a new line')
+
+# opening as read and write
+with open(filePath, mode='r+') as my_new_file: 
+  content = my_new_file.read()
+print(content)
+
+# Creates a text file if not exists
+with open('../artifacts/test2.txt', mode = 'w') as myfile:
+  myfile.write('Creates a new text file')
+```
+
 ## References
 ---
 
 - [`String Format Examples`](https://pyformat.info/)
+- [`Basic Practice`](http://codingbat.com/python)
+- [`List of Practice Problems`](http://www.codeabbey.com/index/task_list) 
+- [`Python Challenges`](http://www.pythonchallenge.com/)
