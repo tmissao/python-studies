@@ -165,11 +165,19 @@ even = [ e for e in range(11) if e % 2 == 0 ]
 # shorter for with condition filter (just get odd number) and return logic (power of the element)
 odd_pow = [ e ** 2 for e in range(11) if e % 2 == 1 ] 
 
-# shorter if else logic
+# shorter if else logic (hard to read)
 even_or_odd = [ 'even' if e % 2 == 0 else 'odd' for e in range(11) ]
-print(even_or_odd)
 
 # celsius  to fahrenheit
 celsius  = [0, 10, 20, 34.5]
 fahrenheit = [ ( (9/5)*e + 32 ) for e in celsius  ]
+
+# nested for
+mylist = []
+for x in [2,4,6]:
+  for y in [1,10,100]:
+    mylist.append(x*y)
+
+# shorter nested for (hard to read)
+mylist = [ x*y for x in [2,4,6] for y in [1,10,100] ]
 ```
