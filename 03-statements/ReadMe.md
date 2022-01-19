@@ -145,3 +145,31 @@ while index < 5:
   print(index)
   index += 1
 ``` 
+
+## List Comprehensions
+---
+
+In order to shorter code, python uses list comprehensions
+```python
+# Long way for
+mylist = []
+for e in range(11):
+  mylist.append(e)
+
+# shorter for using list comprehension
+mylist = [ e for e in range(11) ]
+
+# shorter for with condition filter (just get even number)
+even = [ e for e in range(11) if e % 2 == 0 ]
+
+# shorter for with condition filter (just get odd number) and return logic (power of the element)
+odd_pow = [ e ** 2 for e in range(11) if e % 2 == 1 ] 
+
+# shorter if else logic
+even_or_odd = [ 'even' if e % 2 == 0 else 'odd' for e in range(11) ]
+print(even_or_odd)
+
+# celsius  to fahrenheit
+celsius  = [0, 10, 20, 34.5]
+fahrenheit = [ ( (9/5)*e + 32 ) for e in celsius  ]
+```
