@@ -61,7 +61,6 @@ print(f'The min value is: {min}, the max value is: {max}')
 ```
 
 # Special Args
----
 On python there are two special args, known as: `*args` and `**kwargs` 
 
 - `*args` - allow to receive an arbitrary number of args (n args), the params received are treated as `tuples`
@@ -93,6 +92,41 @@ def myfunc(**kwargs):
 myfunc(brand='Ford', year = '1964', model = 'mustang')
 ``` 
 
+# Lambda Functions
+
+Lambda functions are know as anonymous, meaning that it is no reusable and is just used one time. So there is no necessity to name or def it.
+
+```python
+def square(num):
+  return num**2
+
+def is_even(num):
+  if num % 2 == 0:
+    return True
+  else:
+    return False
+
+numbers = range(10)
+
+# Apply functions square on numbers
+for e in map(square, numbers):
+  print(e)
+
+# lambda function
+square2 = lambda num: num ** 2
+for e in map(square2, numbers):
+  print(e)
+
+# lambda function defined on method argument
+print(list(map(lambda num: num**2, numbers)))
+
+# Apply filter is_even on numbers, just returns numbers which is_even function returns True
+for e in filter(is_even, numbers):
+  print(e)
+
+# Filter with lambda expression
+print(list(filter(lambda num: num % 2 == 0, numbers)))
+```
 
 # Methods
 
